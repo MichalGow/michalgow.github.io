@@ -1,0 +1,177 @@
+/* Font definition */
+
+body {
+    overflow: hidden;
+    overflow-y: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #151515;
+    font-size: 20px;
+}
+
+/* Basic global styles */
+
+h1, h2 {
+    font-weight: 300;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 46px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+p {
+    margin-bottom: 0.5em;
+}
+
+a,
+a:visited {
+    color: #9c7836;
+    font-weight: 400;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #9c7836;
+}
+
+/* Links footer */
+
+.btn-link {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 20px;
+    background-color: #ECE0CA;
+    padding: 5px 10px 5px 40px;
+    color: #9c7836;
+}
+
+.btn-link,
+.btn-link a,
+.btn-link:hover,
+.btn-link a:visited {
+    color: #9c7836;
+}
+
+.btn-link:hover {
+
+}
+
+.btn-link-phone {
+    background-image: url('../images/michal-gow-phone-blue-white.png');
+    background-position: 5px;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+}
+
+.btn-link-email {
+    background-image: url('../images/michal-gow-email-blue-white.png');
+    background-position: 5px;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+}
+
+/* Responsive widths */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+    .w-xs-100 {
+      width: 100% !important;
+    }
+  
+    .w-xs-75 {
+      width: 75% !important;
+    }
+  
+    .w-xs-50 {
+      width: 50% !important;
+    }
+  
+    .w-xs-25 {
+      width: 25% !important;
+    }
+  }
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (max-width: 768px) {
+    .w-sm-100 {
+      width: 100% !important;
+    }
+  
+    .w-sm-75 {
+      width: 75% !important;
+    }
+  
+    .w-sm-50 {
+      width: 50% !important;
+    }
+  
+    .w-sm-25 {
+      width: 25% !important;
+    }
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (max-width: 991px) {
+  
+    .w-md-100 {
+      width: 100% !important;
+    }
+  
+    .w-md-75 {
+      width: 75% !important;
+    }
+  
+    .w-md-50 {
+      width: 50% !important;
+    }
+  
+    .w-md-25 {
+      width: 25% !important;
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+  
+    .w-lg-100 {
+      width: 100% !important;
+    }
+  
+    .w-lg-75 {
+      width: 75% !important;
+    }
+  
+    .w-lg-50 {
+      width: 50% !important;
+    }
+  
+    .w-lg-25 {
+      width: 25% !important;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+  
+    .w-xl-100 {
+      width: 100% !important;
+    }
+  
+    .w-xl-75 {
+      width: 75% !important;
+    }
+  
+    .w-xl-50 {
+      width: 50% !important;
+    }
+  
+    .w-xl-25 {
+      width: 25% !important;
+    }
+  }
+  
