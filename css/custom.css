@@ -75,6 +75,16 @@ a:hover {
     background-color: #ECE0CA;
 }
 
+/* Offer background */
+
+.offer-background {
+  padding-left: 8em;
+  background-image: url('../images/michal-gow-offer-background.png');
+  background-position: left center;
+  background-size: auto 4.5em;
+  background-repeat: no-repeat;
+}
+
 /* Skills */
 
 .card-columns {
@@ -137,6 +147,14 @@ a:hover {
   
     .w-xs-25 {
       width: 25% !important;
+    }
+
+    .offer-background {
+      padding: 3.2em 0 0 0;
+      background-image: url('../images/michal-gow-offer-background.png');
+      background-position: center top;
+      background-size: auto 2.8em;
+      background-repeat: no-repeat;
     }
   }
   
