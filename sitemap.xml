@@ -7,6 +7,12 @@
 
 <url>
   <loc>https://michalgow.github.io/</loc>
-  <lastmod>2019-12-09T12:16:07+00:00</lastmod>
+  <lastmod>2020-07-21T08:33:15+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://michalgow.github.io/jekyll-gatsby-special-offer</loc>
+  <lastmod>2020-07-21T08:33:15+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 </urlset>
