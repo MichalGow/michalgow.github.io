@@ -311,7 +311,6 @@
             <ul class="list-unstyled">
               <li><a href="/privacy-policy">Privacy policy</a></li>
               <li><a href="/terms-of-use">Terms of use</a></li>
-              <li><a href="javascript:$.gdprcookie.display()">Change cookie settings</a></li>
             </ul>
           </div>
         </div>
@@ -331,28 +330,19 @@
         crossorigin="anonymous">
     </script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/gdpr-cookie.js"></script>
-    <script src="js/custom.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154655364-2"></script>
+    <!-- Google Analytics -->
     <script>
-      var gaProperty = 'UA-154655364-2';
-      var disableStr = 'ga-disable-' + gaProperty;
-
-      // Enable Google analytics
-      // See https://stackoverflow.com/questions/10668292/is-there-a-setting-on-google-analytics-to-suppress-use-of-cookies-for-users-who
-      if ($.gdprcookie.preference("analytics") === true) {
-        window[disableStr] = false;
-      } else {
-        window[disableStr] = true;
-      }
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-154655364-2');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'A-154655364-2', {
+        'anonymizeIp': true,
+        'storage': 'none'
+      });
     </script>
+    <!-- End Google Analytics -->
   </body>
 </html>
