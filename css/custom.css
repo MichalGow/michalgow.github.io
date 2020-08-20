@@ -39,6 +39,10 @@ a:hover {
     color: #9c7836;
 }
 
+.abstract {
+  font-style: italic;
+}
+
 /* Links footer */
 
 .btn-link {
@@ -69,6 +73,10 @@ a:hover {
     background-position: 5px;
     background-size: auto 80%;
     background-repeat: no-repeat;
+}
+
+.btn-link-text {
+  padding-left: 10px;
 }
 
 .background-mg {

@@ -16,7 +16,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/gdpr-cookie.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -51,6 +50,7 @@
               <li class="nav-item"><a class="nav-link" href="/#michalgow-skills">Skills</a></li>
               <li class="nav-item"><a class="nav-link" href="/#michalgow-examples">Recent work</a></li>
               <li class="nav-item"><a class="nav-link" href="/jekyll-gatsby-special-offer">Zero-maintenance websites</a></li>
+              <li class="nav-item"><a class="nav-link" href="/gdpr-compliant-google-analytics">Article: GDPR compliant Google Analytics</a></li>
               <li class="nav-item"><a class="nav-link" href="#michalgow-contacts">Contacts</a></li>
               <li class="nav-item"><a class="nav-link" href="#michalgow-legal">Legal</a></li>
             </ul>
@@ -81,37 +81,37 @@
           <div class="col">
             <h2>Preamble</h2>
 
-              <p>By accessing the website at <a href="/">https://michalgow.github.io</a>, you agree to be bound by these terms of service and all applicable laws and regulations, and you agree that you are responsible for compliance with any applicable local laws. If you do not agree to any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
-              
-              <h2>Website compliance</h2>
-              
-              <p>The website is compliant with WCAG 2 Level A.</p>
-              
-              <h2>Use Licence</h2>
-              
-              <p>Permission is granted to use the website as-is.</p>
+            <p>By accessing the website at <a href="/">https://michalgow.github.io</a>, you agree to be bound by these terms of service and all applicable laws and regulations, and you agree that you are responsible for compliance with any applicable local laws. If you do not agree to any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
+            
+            <h2>Website compliance</h2>
+            
+            <p>The website is compliant with WCAG 2 Level A.</p>
+            
+            <h2>Use Licence</h2>
+            
+            <p>Permission is granted to use the website as-is.</p>
 
-              <p>Under this licence, you may not modify or copy the received materials.</p>
-              
-              <h2>Disclaimer</h2>
-              
-              <p>The materials on Michal Gow's website are provided on an ‘as-is’ basis. Michal Gow makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-              
-              <h2>Limitations</h2>
-              
-              <p>In no event shall Michal Gow or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Michal Gow's website. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
-              
-              <h2>Accuracy of materials</h2>
-              
-              <p>The materials appearing on the Michal Gow's website could include technical, typographical, or photographic errors. Michal Gow does not warrant that any of the materials on its website are accurate, complete or current. Michal Gow may make changes to the materials contained on its website at any time without notice. However, Michal Gow does not make any commitment to update the materials.</p>
-              
-              <h2>Modifications</h2>
-              
-              <p>Michal Gow may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the current version of these terms of service.</p>
-              
-              <h2>Governing Law</h2>
-              
-              <p>These terms and conditions are governed by and construed in accordance with the laws of United Kingdom.</p> 
+            <p>Under this licence, you may not modify or copy the received materials.</p>
+            
+            <h2>Disclaimer</h2>
+            
+            <p>The materials on Michal Gow's website are provided on an ‘as-is’ basis. Michal Gow makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            
+            <h2>Limitations</h2>
+            
+            <p>In no event shall Michal Gow or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Michal Gow's website. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+            
+            <h2>Accuracy of materials</h2>
+            
+            <p>The materials appearing on the Michal Gow's website could include technical, typographical, or photographic errors. Michal Gow does not warrant that any of the materials on its website are accurate, complete or current. Michal Gow may make changes to the materials contained on its website at any time without notice. However, Michal Gow does not make any commitment to update the materials.</p>
+            
+            <h2>Modifications</h2>
+            
+            <p>Michal Gow may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the current version of these terms of service.</p>
+            
+            <h2>Governing Law</h2>
+            
+            <p>These terms and conditions are governed by and construed in accordance with the laws of United Kingdom.</p> 
           </div>
         </div>
       </div>
@@ -158,5 +158,15 @@
         crossorigin="anonymous">
     </script>
     <script src="js/bootstrap.min.js"></script>
-    </body>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154655364-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154655364-2', {'anonymize_ip': true, 'client_storage': 'none'});
+    </script>
+  </body>
 </html>

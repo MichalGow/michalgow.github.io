@@ -16,7 +16,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/gdpr-cookie.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -51,6 +50,7 @@
               <li class="nav-item"><a class="nav-link" href="/#michalgow-skills">Skills</a></li>
               <li class="nav-item"><a class="nav-link" href="/#michalgow-examples">Recent work</a></li>
               <li class="nav-item"><a class="nav-link" href="/jekyll-gatsby-special-offer">Zero-maintenance websites</a></li>
+              <li class="nav-item"><a class="nav-link" href="/gdpr-compliant-google-analytics">Article: GDPR compliant Google Analytics</a></li>
               <li class="nav-item"><a class="nav-link" href="#michalgow-contacts">Contacts</a></li>
               <li class="nav-item"><a class="nav-link" href="#michalgow-legal">Legal</a></li>
             </ul>
@@ -85,7 +85,13 @@
 
             <h2>Personal information</h2>
 
-            <p>I do not collect any personal information.</p>
+            <p>
+              I do not collect any personal information. The Google Analytics used on this site doesn't store nor send any Personally identifiable information (PII)
+              to anywhere. In case you have any questions do not hesitate to ask at:
+              <span class="spamspan">
+                <span class="u">michal.gow</span> [at] <span class="d">outlook [dot] com</span>
+              </span>.
+            </p>
 
             <h2>Security</h2>
 
@@ -93,9 +99,7 @@
 
             <h2>Cookies</h2>
 
-            <p>I do not set tracking cookies without your consent.</p>
-
-            <p>I employ Google Analytics, which uses cookies to obtain and store metrics if your consent is given.</p>
+            <p>I do not set cookies without your consent.</p>
 
             <h2>Compliance</h2>
 
@@ -150,5 +154,15 @@
         crossorigin="anonymous">
     </script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154655364-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154655364-2', {'anonymize_ip': true, 'client_storage': 'none'});
+    </script>
   </body>
 </html>
