@@ -1,0 +1,7 @@
+Sitemap: https://michalgow.github.io/sitemap.xml
+User-agent: *
+Allow: /
+Disallow: /privacy-policy
+Disallow: /privacy-policy.html
+Disallow: /terms-of-use
+Disallow: /terms-of-use.html

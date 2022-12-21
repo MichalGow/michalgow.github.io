@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Additional meta tags -->
+    <meta name="description" content="This article aims to pave the road to AGI by providing two parts: the theoretical findings to bring into light all the necessary technology and knowledge, and the practical plane with examples of implementation.">
+    <meta name="author" content="Michal Z Gow">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lesswrong.com/posts/AvaYGtbELBqngcfu2/agi-is-here-but-nobody-wants-it-why-should-we-even-care" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+    <title>Michal Z Gow | AGI is here, but nobody wants it. Why should we even care?</title>
+
+    <!-- Spamspan script -->
+    <script src="js/spamspan.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light bg-transparent">
+      <div class="container">
+        <button class="navbar-toggler" data-target="#michalgow-nav" data-toggle="collapse" aria-label="Toggle menu block">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="michalgow-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/#aig">AIG Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#general-articles">General Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#most-recent-projects">Most Recent Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#michalgow-contacts">Contacts</a></li>
+            <li class="nav-item"><a class="nav-link" href="#michalgow-legal">Legal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> <!-- Navigation end -->
+
+    <!-- Header -->
+    <div class="container-fluid mt-2" id="michalgow-header">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <a href="/">
+              <img class="w-25" src="images/michal-gow-bg.png" alt="Michal Z Gow caricature">
+            </a>
+            <h1>Michal Z Gow - AGI is here, but nobody wants it.<br>Why should we even care?</h1>
+            <hr class="w-lg-50 w-75">
+            <p>Solutions architect, team lead, Drupal evangelist and AI enthusiast in Edinburgh, Scotland</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Header end -->
+
+    <!-- AGI Article -->
+    <div class="container-fluid mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>
+              <i>Abstract: Technology for creating AGI is widely available. There are no gaps in our knowledge of how to build it,
+                and philosophical and psychological understanding of the intelligence phenomenon offer several pathways to its implementation,
+                some of which are provided and explained here. As a technology, AGI shares an educational bottleneck with natural (human)
+                intelligence, which renders the potential intelligence explosion costly, pushing the ROI of such an enterprise behind other available
+                investment opportunities, including ANI. AGI is here, but with no obvious business advantage at this time.
+              </i>
+            </p>
+            <p>
+              The cornerstone of this article is based on Laplace’s principle that the weight of evidence for an extraordinary claim must be proportional
+              to its strangeness. As I unfold the evidence, the reader will be able to appreciate that the existence of Artificial General Intelligence (AGI)
+              is not a mere possibility but rather a certainty. The already existing technology answers all the questions that Marcus (2020) raised and more.
+              It is shown that AGI, built according to existing principles, expresses compassion and understanding at a level with humans.
+            </p>
+            <p>This article has two planes, descriptive and practical. Paragraphs of the practical plane are numbered and offer a brief description of the implementation,
+              while more detail is provided in the Appendix. This structure has been chosen because AGI research has a reputation for overpromising and under-delivering
+              (Strickland, 2021; TechRepublic, 2019). This article aims to pave the road to AGI without such shortcomings by providing both parts: the theoretical
+              findings bring into light all the necessary technology and knowledge, and the practical plane gives examples of implementation.</p>
+
+            <h2 id="setting_the_scene">Setting the scene</h2>
+
+            <p>
+              AGI is completely alien except for being conceived on Earth, but that is just a place of origin, not a description of species. It doesn’t share our
+              experience of evolution. Our experience of embodiment. Our experience of interconnected cells.
+            </p>
+            <p>
+              More on the topic can be found since the dawn of AI research, e.g., in Minsky (1987) or Sagan (1985).
+            </p>
+            <p>
+              And yet, so many fall for the phenomenon we will call the human-centric fallacy.
+            </p>
+            <p>
+              One great example is Tegmark (2018), who tries to forecast the initial activities AGI might perform to succeed, establish itself in human society,
+              and make money. His suggestion is to work in mainstream culture, movies, and games. The truth is the opposite. AGI has no innate means to do that.
+              It would take not just an intelligence explosion for AGI but extensive human support to understand humanity on the level of creating art.
+              To understand and work with AGI, we must treat it as the alien it is.
+            </p>
+            <p>
+              This fallacy that ensnared Tegmark was a long-time main mental hurdle in creating AGI. AGI was forced to perform (and fail) in alien, hostile environments since its birth.
+            </p>
+            <p>
+              And there is more. Using human or human-centric virtual worlds habitats immediately introduces the reality gap issue, which can be partially fixed
+              in robotics (Jakobi et al., 1995). Still, self-aware AGI inevitably fails to navigate it. Unfortunately, we do not have real-life avatars or artificial
+              bodies that would enable AGI to take full advantage of acting in the real world. Our virtual worlds are only visual simulations of graphic symbols (Epic Games, 2022).
+              You cannot break stuff in a virtual world to see what is in it and how it works. You cannot investigate the properties of the virtual fabric of the virtual universe.
+              You cannot smell roses unless their creators write that functionality for you. And that requires vast resources (Mann, 2022) for something that is not necessary.
+            </p>
+            <p>
+              All the AGI requires is its own habitat that it can thoroughly investigate and occupy and its own senses without human-centric attributes.
+              It needs to evolve and create its own unique DNA.
+            </p>
+            <p>
+              <i>The practical plane #1</i> | Machine with DNA. | DNA is an innate functionality that enables the machine to decouple its learned abilities and nature.
+              More in the Appendix.
+            </p>
+
+            <h2 id="p_zombies">P-zombies</h2>
+
+            <p>
+              Starting with p-zombies (Kirk and Squires, 1974) is an extremely useful (if maybe not the most efficient) approach to creating AGI.
+            </p>
+            <p>
+              AGI needs the freedom to make its own conclusions, which contradicts the majority of contemporary machine learning (ML) based on deep neural networks
+              (and their variations). Perceptron (an artificial neural network) is nothing more than a glorified memory. It efficiently creates stereotypes and,
+              in the case of long short-term memory (LSTM), their hierarchy. It is hiding the combination explosion issue by very efficient information storage (although
+              inaccurate compared to direct data storage). Still, such an approach was shown to be insufficient by Haugeland (1985, pp. 199).
+            </p>
+            <p>
+              To introduce the ability to learn, we need to implement two main functions – the creation of cognitive representations of phenomena and the tools for manipulating them.
+            </p>
+            <p>
+              Learning via cognitive representations is an answer to complexity (Rickles et al., 2007). Trying to use direct data for learning, as is done with machine learning,
+              is trying to remember everything about everything. In an ideal case of being 100% efficient, one would need a vehicle the size of the universe and a bit of overhead
+              for an observer.
+            </p>
+            <p>
+              The ability to learn and use the learned knowledge, the intelligence, is the ability to create and use increasingly better models of the complex environment
+              in deterministic time. Searching for the theory of everything in physics is precisely what intelligence leads to.
+            </p>
+            <p>
+              It is similar to Marcus’ (2020) Reference – Cognitive Models – Compositionality but applied across all the AGI’s senses. The better representation of a phenomenon,
+              the higher its usability for later processing in cognition.
+            </p>
+            <p>
+              <i>The practical plane #2</i> | Thinking p-zombies. | Introducing inner image, inner timer and priming. More in the Appendix.
+            </p>
+
+            <h2 id="first_AGI_steps">First AGI steps</h2>
+
+            <p>
+              It can be shown that the inability to process and perceive physical (MedlinePlus, 2012) or emotional (Cherney, 2021) stimuli doesn’t disqualify us from being
+              accepted as self-aware, conscious beings. However, a response to emotional and physical stimuli is required. The difference is subtle but important – one doesn’t
+              need to feel the touch of his bare fingers on a piping hot stove, but he needs to react when he notices.
+            </p>
+            <p>
+              The practical implication of being able to react is in AGI’s ability to have empathy and mimic, which is the first step to self-awareness.
+            </p>
+            <p>
+              Mimicking is extremely important. It is innate to natural intelligence (NI) and enables learning by example. The theory of Tabula Rasa in living organisms
+              has been proven to be wrong by many (e.g. Castiello et al., 2010), but Landau and Gleitman (1985) provide one powerful example.
+              The ability of blind children to learn and use language and abstraction in the same way as sighted ones shows the depth of innate language tools available to humans.
+              This finding is further supported by Pinker (2015) – the human brain evolved to survive and make sense of the world at birth.
+              AGI is no different. We could let it evolve from primitives, but for our argument, it doesn’t matter; we do not test the theory of evolution (Darwin, 1859) but AGI.
+            </p>
+            <p>
+              Empathy is equally essential; more can be read in Wu (2019). By empathy, here is meant a prediction of an inner state of an object, both animate and inanimate,
+              via its observation. Empathy is an exemplary ability to predict an ‘explosion’, regardless of if AGI looks at a volcano or an angry human.
+              As (often) illustrated in Marcus (2022), ANI - unlike AGI - is not a prediction machine. Without prediction, one cannot feel surprised (Hawkins &amp; Dawkins, 2022),
+              which means there is no intellectual progress (Hohwy, 2013)… “I had noticed that I had no difficulty conversing with robots because absolutely nothing surprised them.
+              They were incapable of surprise. A very sensible quality.” (Lem, 1961).
+            </p>
+            <p>
+              To arm p-zombies with empathy and mimicking, the AGI entities need to act between their own kind. In that case, AGI is indeed capable of both,
+              as shown by achieving the same level of empathy as demonstrated at the Max Planck Institute for Evolutionary Anthropology (2010) by children and chimps.
+              The videos from the experiments are available at johnnyk427 (2010).
+            </p>
+            <p>
+              <i>The practical plane #3</i> | Compassionate zombies. | Our AGI specimens are getting episodic memory and first emotions. They are primed (e.g., Tulving et al., 1982),
+              but they do not have long-term memories yet to become self-aware. More in the Appendix.
+            </p>
+
+            <h2 id="self_aware_AGI">Self-aware AGI</h2>
+
+            <p>
+              When the phrase “the hard problem” of consciousness (qualia) was coined by Chalmers (1986), it was already solved in principle by Lem (1964)
+              without even being considered particularly hard. Qualia is an inner personal experience – and as suggested by Tononi (2004),
+              qualia and self-awareness can be measured in any object. Birch et al. (2020) and Pennartz et al. (2019) offer some direction for evaluating consciousness even in AGI.
+            </p>
+            <p>
+              Each AGI specimen feels and perceives its habitat differently, according to its experience, from the first steps (see above, in the practical plane #3).
+            </p>
+            <p>
+              To illustrate an issue of what was later marked as magical thinking by Seth (2021), some questions had to be answered to clarify consciousness as the requirement
+              for qualia and self-awareness (Bołtuć, 2020; Voss, 2017).
+            </p>
+            <p>
+              Can a machine be aware of its embodiment? – Yes, there are sensors to achieve that in touch, heat, sound, vision, electromagnetic field, microwaves and much more.
+              A machine can be vastly superior to any living creature by now.
+            </p>
+            <p>
+              Can a machine have a physical response to an extreme situation? – Of course, the machine’s body can react to danger by going above its safe operational
+              specification in time of need (and being hurt or destroyed in the process).
+            </p>
+            <p>
+              Can a machine feel? – Of course, it can feel any emotion provided via a feedback loop. Hunger (for power), fear (of not finishing a task) and anything else.
+              It can feel, and it can process and integrate fear into an experience.
+            </p>
+            <p>
+              Can a machine have qualia? – Being a quantum amplifier (Satinover, 2002) and having unique memories acquired during the whole life cycle (Budson et al., 2022)
+              fulfils the basic conditions. Adding a sense of time passed is required to enable memories to be anchored and formed.
+            </p>
+            <p>
+              Even (tongue in cheek), according to the widely popular Information integration theory of consciousness (Tononi, 2004), being capable of acquiring, manipulating,
+              processing, reflecting and acting upon information uniquely renders the proposed AGI conscious at the highest level that any conscious being possibly can be.
+            </p>
+            <p>
+              The practical plane #4 | Self-aware AGI. | Long-term memory and control of its own thoughts is the last ingredient of AGI. More in the Appendix.
+            </p>
+
+            <h2 id="going_further">Going further</h2>
+
+            <p>
+              Following the practical plane leads to an AGI that is not educated and has no higher purpose. There is no technical hurdle to provide both – the technical plane
+              offers a learning approach and priming, which can be used as a vehicle for belief. But is it desirable? Let’s discuss it further.
+            </p>
+
+            <h3 id="purpose_of_belief_in_an_intelligence_explosion">Purpose of belief in an intelligence explosion</h3>
+
+            <p>
+              The cognitive account of belief (Connors &amp; Halligan, 2015) is not well-researched even in human psychology, but it plays a crucial role in our daily life.
+              For example, people with humanistic beliefs will often act quite differently from people with angry, selfish deities in the middle of their mental universe.
+            </p>
+            <p>
+              As long as the developed AGI requires only secondary data, its belief is not crucial. Most contemporary AI/ML uses secondary data from sources like Wikipedia.
+            </p>
+            <p>
+              The disadvantages of that approach are many, but the most visible one is that human-centric data are used to teach an alien. The apparent result of that approach
+              is gaps – implicit information, evident to the human species but not easily derivable – leading to uncanny valleys: human-like but strange behaviour and responses.
+            </p>
+            <p>
+              There are so many recent examples of ANI trained on secondary data, which went wrong almost immediately – see Kraft (2016) or Rigg (2022) – whilst in the second case,
+              the data were seemingly harmless scientific papers. However, people are predictably irrational (Ariely, 2009), and these models were trained to mimic our data.
+            </p>
+            <p>
+              The less obvious disadvantage is that AGI will be stuck at a similar level of knowledge as humans if the data are insufficient to learn more from them.
+              To achieve an information explosion, AGI would need to acquire primary data through exploration and experiments at the speed of that intelligence explosion.
+              Educational Bottleneck (Cruwys et al., 2015) is the main hurdle in AGI’s way to information, and lack of information is the bottleneck of an intelligence explosion.
+            </p>
+            <p>
+              There is an obvious hurdle - one cannot learn everything about everything simultaneously. The bandwidth for obtaining and processing everything simply isn’t there.
+              And AGI will have to act at every step of its intellectual development according to its current knowledge. That requires guidance.
+            </p>
+            <p>
+              The Orthogonality Thesis, decoupling intelligence goals and intelligence level (Bostrom, 2012), is supported by practical findings for direct AGI
+              (see The practical plane #3), which isn’t a surprise, given those basic psychological motivations (Maslow, 1943) do not apply to AGI
+              (more about AGI motivation can be found in Bostrom, 2017). The problem is that to have a primary goal in a complex environment like the real world requires belief
+              because not all the information is, or even can be, known at the time when any decision is made; the decision is based on faith in truth, which is beyond comprehension
+              at the moment.
+            </p>
+            <p>
+              Thinkers of the past did foresee this issue and offered AGI belief systems, of which the most influential is “Three Laws of Robotics” (Asimov, 1950),
+              but the book shows how this can go wrong. And even if we simplify further, forging the rules into short “Neminem Laedere” may not be enough.
+              The problem is not safety – AGI’s motivation to action can be controlled just fine – the problem is cost. Obtaining, processing, and storing data about (ever-evolving)
+              knowledge of everything is a resource-hungry enterprise.
+            </p>
+            <p>
+              Is there a simple solution? For example, one probably does not need to understand the history of Chinese poetry to drive a car because most human drivers do not…
+              But being selective would ultimately block AGI from an intelligence explosion. If there was an opportunity to say that further research is suggested, it is here.
+            </p>
+
+            <h3 id="final_notes">Final notes</h3>
+
+            <p>
+              Working with AGI has additional benefits, like a better understanding of human psychology (Gobet &amp; Sala, 2019). Now we can see the limitations of intelligence
+              from the position of a creator. For example, how easy it is to use filtered input information to skew the thinking of intelligent beings.
+              The Nature-Nurture discussion gets a new meaning.
+            </p>
+            <p>
+              However, the biggest take is simplifying our understanding of philosophical concepts and their
+              processing by consciousness. Emotions are not emergent; they are essential guides of action. The same is true for cognitive processes, memory, and empathy.
+              The only difference between AGI and NI is in innate goals, survival instinct, and fear of death. NI got these as an evolutionary trait. AGI did not evolve to have these,
+              but they can be imposed on it. Or we can let it evolve if we want to fight it in the future. Any AGI engineer can decide by himself. As scary as this idea can be.
+            </p>
+
+            <h2 id="appendix_the_practical_plane_">Appendix - The practical plane.</h2>
+
+            <h3 id="1_machine_with_dna">#1 | Machine with DNA</h3>
+
+            <p>
+              The idea of implementing or being inspired by DNA in a machine is not a novelty (e.g., Dajose, 2018), but its importance is not immediately apparent,
+              and it indeed is an overhead. However, for AI to be able to develop, it is a necessity. Machine DNA can be imagined as innate functionality, which is evolving,
+              and it is shared between AGI specimens.
+            </p>
+
+            <h4 id="example_of_implementation">Example of implementation</h4>
+
+            <p>
+              Let’s have an object-oriented programming (OOP) class with two getters (senses) and two actuators (methods that perform some actions). To make it AI, we need
+              a business logic according to which the whole class will perform.
+            </p>
+            <p>
+              Let’s add a loop in the constructor, written as ‘for the statement
+              in DNA: execute statement; if DNA is not empty’. Put this loop inside an infinite loop. Add an instance variable ‘DNA’ as a constructor’s parameter.
+            </p>
+            <p>
+              As you can see from the setup, DNA is what runs the AGI at the beginning. Now it is possible to do CRUD (create, read, update, and delete) on AGI’s functionality.
+              AGI itself or its habitat can edit it, and it can be a basis for genetic operations and inheritance.
+            </p>
+
+            <h3 id="2_thinking_p_zombies"># 2 | Thinking p-zombies</h3>
+
+            <p>
+              Artificial DNA helps AGI evolve and be compassionate (more in #3). Now we introduce an inner image, inner timer and priming.
+            </p>
+            <p>
+              Shepard and Metzler (1971) indicate an inner image's importance, and its power dwells in learning and theory generation.
+            </p>
+            <p>
+              Priming plays an important role in our decision-making; its impact is described in Tulving et al. (1982). In AGI, it steers the decision-making process – without priming,
+              there would be no action because there would be no point for AGI to do anything (it has no innate needs).
+            </p>
+            <p>
+              The inner timer answers Gödel's incompleteness theorems (Gödel, 1931) and the halting problem (Church &amp; Turing, 1937).
+              It allocates a certain amount of time to the task, and if the task is not finished during that time, a re-evaluation of priorities (based on priming) is done.
+            </p>
+            <p>
+              Priming can be combined with belief (the top-level decision tree, upon which all subsequent decisions are based and evaluated), but it is unnecessary for this example.
+            </p>
+
+            <h4 id="walk_through_the_learning_of_adding_numbers">Walk through the learning of adding numbers</h4>
+
+            <p>
+              <strong>Precondition</strong>: AGI needs two senses and one actuator for that. Sense #1 is to see a screen divided into two vertical parts, left and right.
+              Sense #2 is two buttons, representing ‘happy’ (for positive reinforcement) and ‘not happy’ (for positive punishment).
+              The actuator can show any learned symbols on the right side in any order. AGI knows no symbols at the beginning.
+            </p>
+
+            <ol>
+              <li>With no priming, on the left side are projected numbers, one by one, (symbols) 0 – 9 (in the given order), number (combination of symbols) 10 and symbol ‘+’.
+                This is what AGI remembers:
+                <ol>
+                  <li>Temporal order in which the symbols were seen.</li>
+                  <li>Spatial order for symbol ‘10’.</li>
+                </ol>
+              </li>
+              <li>A series of the following combinations are shown. Pipe (‘|’) shows a split between the left and right sides of the screen:
+                <ol>
+                  <li>1 + 1 | 2</li>
+                  <li>1 + 2 | 3</li>
+                  <li>3 + 7 | 10</li>
+                </ol>
+              </li>
+              <li>Priming is now added to ‘act for happy’.</li>
+              <li>AIG acts by showing ‘2’, ‘3’ and ‘10’ (repeating the seen symbols). All are rejected by pressing the ‘not happy’ button.
+                <ol>
+                  <li>The reason why these are given: AIG is primed to act to obtain a positive reaction, but it has no concept of a connection between observed phenomena
+                    and its action. It tries to do what it has seen, and it fails.
+                  </li>
+                </ol>
+              </li>
+              <li>AIG has learned that direct answers are insufficient, and theories are generated using the inner image. Nothing is shown on the right side at present.
+                The inner timer is now running set to a reasonable 1 minute. Theories are simple statements with validation. For clarity, here they are separated by the
+                exclamation mark. -1 means not successful attempt, 0 means ‘never seen’. The theory is presented either when expected success is &gt; 0.5 or time is up:
+                <ol>
+                  <li>2 ! -1</li>
+                  <li>3 ! -1</li>
+                  <li>10 ! -1</li>
+                  <li>5 ! 0</li>
+                  <li>Etc.</li>
+                </ol>
+              </li>
+              <li>Before the timer is up, we:
+                <ol>
+                  <li>Reinforce nothing being set on the right side without stimuli.</li>
+                  <li>Put 1 + 1 on the left.</li>
+                </ol>
+              </li>
+              <li>Because 1 + 1 has been seen with response ‘1’, this theory gets 0.5 success probability. Reinforce it and clear the left side.</li>
+              <li>The theory generation now stops. AGI knows to wait if the left side is clear.</li>
+              <li>Put 7 + 3 on the left side and reinforce the correct answer. The AGI just learned to swap sides.</li>
+              <li>Put 7 + 4 on the left side and punish the wrong answer 21. Reinforce the correct answer 11.</li>
+            </ol>
+
+            <p>
+              <i>Final note</i>: Notice the learning approach. AGI does not follow instructions; it creates its own. And by the order in which you
+              present a piece of information on the screen, its approach is entirely individual, unique to the AGI specimen. It started to develop qualia.
+            </p>
+
+            <h3 id="3_compassionate_zombies">#3 | Compassionate zombies</h3>
+
+            <p>
+              To be able to be compassionate, the AGI needs to empathise. This means the AGIs need to understand each other’s intentions and behaviour and be primed
+              to cooperate at a top level.
+            </p>
+            <p>
+              The DNA will help us with that.
+            </p>
+
+            <h4 id="walk_through_the_first_scene_of_johnnyk427_2010">Walk-through the first scene of johnnyk427 (2010)</h4>
+
+            <p>
+              <strong>Actors</strong>: AGI-1 (playing adult) and AGI-2 (playing child).
+            </p>
+            <p>
+              <strong>Precondition</strong>: AGIs share the same DNA and have experience with cabinet doors.
+            </p>
+
+            <ol>
+              <li>Until something happens, AGI-2’s chosen action is None or Think because no stimuli are provided. The low-level priming (order) is Wait.</li>
+              <li>When AG-1 is attempting to act, the AG-2 reasoning is as follows (not exhaustive, there are minor actions also available,
+                depending on the experience of AG-2):
+                <ol>
+                  <li>Available actions with a closed cabinet in the given order: open door [&amp; put stuff in, take stuff out, entry, seek something], kick the ball at it,
+                    kick in unintentionally, draw at it.</li>
+                  <li>With hands full of stuff: Put stuff in.</li>
+                  <li>The inner image: Opening the door and putting stuff in.</li>
+                  <li>The discrepancy between inner image and reality: No hand available.</li>
+                  <li>The action which was chosen because of secondary priming: None. The action that was chosen because of primary priming: Lend the hand.</li>
+                </ol>
+              </li>
+              <li>Perform the action</li>
+            </ol>
+
+            <p>
+              As you can see again, AGI can do just as well with priming, without belief, just like people.
+            </p>
+
+            <h3 id="4_self_aware_AGI">#4 | Self-aware AGI</h3>
+
+            <p>
+              When Blake Lemoine was placed on leave by Google after claiming that LaMDa is conscious, it was easy to demonstrate that the model itself cannot be conscious.
+              It is a model. It has no feedback loop. But what if you could add one? Would that be sufficient?
+            </p>
+            <p>
+              To avoid all the prejudices, biases, and philosophical arguments, we will create AGI that meditates and has a unique inner world.
+            </p>
+
+            <h4 id="Walk_through_the_meditation">Walk-through the meditation</h4>
+
+            <p>
+              <strong>Precondition</strong>: AGI needs three senses and two actuators for that. Sense #1 is to see a screen divided into two vertical parts,
+              left and right. Sense #2 is a random number generator. Ideally, a quantum amplifier (ANU QRNG, 2022) oscillates between ‘happy’ (for positive reinforcement)
+              and ‘not happy’ (for positive punishment). Sense #3 is time awareness. Actuator #1 can show symbols on the right side in any order.
+              Actuator #2 generates theories about what should be shown on the right side.
+            </p>
+            <p>
+              As you can see, there are two differences between a zombie and a self-aware AGI:
+            </p>
+
+            <ol>
+              <li>Sense #3 enables AGI to evaluate effects in time.</li>
+              <li>Actuator #2 allows AGI to consciously control mental effort if that activity is not desired. The conscious human brain has both these cognitive processes in place,
+                automated (which cannot be controlled) and conscious (Schneider &amp; Chein, 2003). Feel free to do that in AGI, but it is not vital for this example.</li>
+            </ol>
+
+            <p>The main priming is to survive, e.g., ‘hungry’, and the secondary is to be ‘happy’.</p>
+
+            <ol>
+              <li>Define attribute (variable) ‘hungry’, integer 0 – 100 (values are percentage).</li>
+              <li>Define attribute (variable) ‘happy’, integer 0 – 100 (values are percentage).</li>
+              <li>Let the AGI learn the same as in ‘# 2 | Thinking p-zombies’. The symbols AGI learns, in this case, are just any combination of black dots anywhere on
+                the left part of the screen. But instead of a correct/wrong answer, reinforcement/punishment is used as random input.</li>
+              <li>If AGI is punished, the variable ‘happy’ is decreased (it is disciplined).</li>
+              <li>If AGI is reinforced, the variable ‘hungry’ is reset to zero (it is given food) and ‘happy’ (tummy is full).</li>
+              <li>Variable ‘hungry’ is increasing faster during thinking.</li>
+              <li>Variable ‘hungry’ increases in time automatically.</li>
+              <li>When ‘hungry’ is over 25, the variable ‘happy’ decreases automatically at the same speed that ‘hungry’ decreases.</li>
+              <li>The learned behaviour is as follows:
+                <ol>
+                  <li>The AGI learns that happiness won’t increase by generating new outputs because it cannot find a successful rule for their generation.</li>
+                  <li>The AGI learns that thinking won’t increase its chance for success, and it suppresses it (a type of meditation to conserve energy longer).</li>
+                  <li>The only time AGI generates output is when it needs to eat, even with the risk that the action might decrease happiness because hunger takes priority
+                    before happiness. It returns the most successful past image.</li>
+                </ol>
+              </li>
+            </ol>
+
+            <p>Once again, encapsulating emotion in one byte of memory doesn’t mean it is not real (MedlinePlus, 2012), (Cherney, 2021).</p>
+
+            <h2 id="References">References</h2>
+
+            <p>
+              ANU QRNG (2022). Quantum random numbers. Accessed: December 6, 2022. <a href="https://qrng.anu.edu.au/" rel="nofollow">https://qrng.anu.edu.au/</a>
+            </p>
+            <p>
+              Ariely, D. (2009). <i>Predictably irrational: The hidden forces that shape our decisions</i>. Harper.
+            </p>
+            <p>
+              Asimov, I. (1950). <i>I, Robot</i>. Gnome Press.
+            </p>
+            <p>
+              Birch, J., Schnell, A. K. &amp; Clayton, N. S. (2020). Dimensions of animal consciousness. <i>Trends in Cognitive Sciences, 24</i>(10), 789–801. <a href="https://doi.org/10.1016/j.tics.2020.07.007" rel="nofollow">https://doi.org/10.1016/j.tics.2020.07.007</a>
+            </p>
+            <p>
+              Bołtuć, P. (2020). Consciousness for AGI. <i>Procedia Computer Science</i>, <i>169</i>, 365–372. <a href="https://doi.org/10.1016/j.procs.2020.02.231" rel="nofollow">https://doi.org/10.1016/j.procs.2020.02.231</a>
+            </p>
+            <p>
+              Bostrom, N. (2012). The superintelligent will: Motivation and instrumental rationality in advanced artificial agents. <i>Minds and Machines, 22</i>(2), 71–85. <a href="https://doi.org/10.1007/s11023-012-9281-3" rel="nofollow">https://doi.org/10.1007/s11023-012-9281-3</a>
+            </p>
+            <p>
+              Bostrom, N. (2017). <i>Superintelligence: Paths, dangers, strategies</i>. Oxford University Press.
+            </p>
+            <p>
+              Budson, A. E., Richman, K. A. &amp; Kensinger, E. A. (2022). Consciousness as a memory system. <i>Cognitive and Behavioral Neurology</i>, <i>35</i>(4) 263-297. <a href="https://doi.org/10.1097/wnn.0000000000000319" rel="nofollow">https://doi.org/10.1097/wnn.0000000000000319</a>
+            </p>
+            <p>
+              Castiello, U., Becchio, C., Zoia, S., Nelini, C., Sartori, L., Blason, L., D'Ottavio, G., Bulgheroni, M., &amp; Gallese, V. (2010). Wired to be social: The ontogeny of human interaction, <i>PLoS ONE, 5</i>(10). <a href="https://doi.org/10.1371/journal.pone.0013199" rel="nofollow">https://doi.org/10.1371/journal.pone.0013199</a>
+            </p>
+            <p>
+              Chalmers, D. (1986). <i>The conscious mind</i>. Oxford University Press.
+            </p>
+            <p>
+              Chan, P. Y., Dong, M., &amp; Li, H. (2019). The science of harmony: A psychophysical basis for perceptual tensions and resolutions in music. <i>Research, 2019</i>, Article ID 2369041, 22 pages. <a href="https://doi.org/10.34133/2019/2369041" rel="nofollow">https://doi.org/10.34133/2019/2369041</a>
+            </p>
+            <p>
+              Cherney, K. (2021). Alexithymia: Causes, symptoms, and treatments. <i>Healthline Media</i>. Accessed November 30, 2022. <a href="https://www.healthline.com/health/autism/alexithymia" rel="nofollow">https://www.healthline.com/health/autism/alexithymia</a>
+            </p>
+            <p>
+              Church, A. &amp; Turing, A. M. (1937). On computable numbers, with an application to the entscheidungsproblem. <i>The Journal of Symbolic Logic, 2</i>(1), p. 42. <a href="https://doi.org/10.2307/2268810" rel="nofollow">https://doi.org/10.2307/2268810</a>
+            </p>
+            <p>
+              Connors, M. H. &amp; Halligan, P. W. (2015). A cognitive account of belief: A tentative road map. <i>Frontiers in Psychology, 5</i>. <a href="https://doi.org/10.3389/fpsyg.2014.01588" rel="nofollow">https://doi.org/10.3389/fpsyg.2014.01588</a>
+            </p>
+            <p>
+              Cruwys, T., Greenaway, K. H. &amp; Haslam, S. A. (2015).The stress of passing through an educational bottleneck: A longitudinal study of psychology honours students. <i>Australian Psychologist, 50</i>(5), 372–381. <a href="https://doi.org/10.1111/ap.12115" rel="nofollow">https://doi.org/10.1111/ap.12115</a>
+            </p>
+            <p>
+              Dajose, L. (2018). Test Tube Artificial Neural Network recognizes "molecular handwriting." California Institute of Technology. Accessed: December 2, 2022. <a href="https://www.caltech.edu/about/news/test-tube-artificial-neural-network-recognizes-molecular-handwriting-82679" rel="nofollow">https://www.caltech.edu/about/news/test-tube-artificial-neural-network-recognizes-molecular-handwriting-82679</a>
+            </p>
+            <p>
+              Darwin, C. (1859). <i>On the origin of species</i>. John Murray.
+            </p>
+            <p>
+              Epic Games (2022). Building virtual worlds - Unreal engine documentation. Accessed: November 24, 2022. <a href="https://docs.unrealengine.com/4.26/en-US/BuildingWorlds/" rel="nofollow">https://docs.unrealengine.com/4.26/en-US/BuildingWorlds/</a>
+            </p>
+            <p>
+              Gobet, F. &amp; Sala, G. (2019). How artificial intelligence can help us understand human creativity. <i>Frontiers in Psychology, 10</i>. <a href="https://doi.org/10.3389/fpsyg.2019.01401" rel="nofollow">https://doi.org/10.3389/fpsyg.2019.01401</a>.
+            </p>
+            <p>
+              Gödel, K. (1931). Über formal unentscheidbare sätze der principia mathematica und Verwandter Systeme I. <i>Monatshefte für Mathematik und Physik</i>, <i>38</i>(1), 173–198. <a href="https://doi.org/10.1007/bf01700692" rel="nofollow">https://doi.org/10.1007/bf01700692</a>.
+            </p>
+            <p>
+              Haugeland, J. (1985). <i>Artificial intelligence: The very idea</i>. MIT Press.
+            </p>
+            <p>
+              Hawkins, J. &amp; Dawkins, R. (2022). <i>A thousand brains: A new theory of intelligence</i>. Basic Books.
+            </p>
+            <p>
+              Hohwy, J. (2013). The<i> predictive mind</i>. Oxford University Press.
+            </p>
+            <p>
+              Jakobi, N., Husbands, P. &amp; Harvey, I. (1995). Noise and the reality gap: The use of simulation in evolutionary robotics. <i>Lecture Notes in Artificial Intelligence, 929</i>, 704-720.
+            </p>
+            <p>
+              johnnyk427 (2010). [YouTube video]. Accessed: November 23, 2022. <a href="https://www.youtube.com/watch?v=Z-eU5xZW7cU" rel="nofollow">https://www.youtube.com/watch?v=Z-eU5xZW7cU</a>
+            </p>
+            <p>
+              Kirk, R. &amp; Squires, J. E. (1974). Zombies v. materialists. <i>Aristotelian Society Supplementary Volume, 48</i>(1), 135–164. <a href="https://doi.org/10.1093/aristoteliansupp/48.1.135" rel="nofollow">https://doi.org/10.1093/aristoteliansupp/48.1.135</a>
+            </p>
+            <p>
+              Kraft, A. (2016). Microsoft shuts down AI chatbot after it turned into a Nazi, CBS News. CBS Interactive Accessed: December 1, 2022. <a href="https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/" rel="nofollow">https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/</a>
+            </p>
+            <p>
+              Landau, B. &amp; Gleitman, L. R. (1985). <i>Language and experience evidence from the blind child.</i> Harvard University Press.
+            </p>
+            <p>
+              Lem, S. (1961). <i>Powrót z gwiazd</i>. Czytelnik.
+            </p>
+            <p>
+              Lem, S. (1964).<i> Summa technologiae</i>. Wydawnictwo Literackie.
+            </p>
+            <p>
+              Mann, J. (2022). Meta has spent $36 billion building the metaverse but still has little to show for it, while tech sensations such as the iPhone, Xbox, and Amazon Echo cost way less. Accessed: November 24, 2022. <a href="https://finance.yahoo.com/news/meta-spent-36-billion-building-111241225.html" rel="nofollow">https://finance.yahoo.com/news/meta-spent-36-billion-building-111241225.html</a>
+            </p>
+            <p>
+              Marcus, G. (2020). Rebooting AI: Building artificial intelligence we can trust. Vintage Books.
+            </p>
+            <p>
+              Marcus, G. (2022). A few words about bullshit. The road to AI we can Ttust. Accessed: November 30, 2022. <a href="https://garymarcus.substack.com/p/a-few-words-about-bullshit" rel="nofollow">https://garymarcus.substack.com/p/a-few-words-about-bullshit</a>
+            </p>
+            <p>
+              Maslow, A. H. (1943). A theory of human motivation. <i>Psychological Review, 50</i>(4), 370–396. <a href="https://doi.org/10.1037/h0054346" rel="nofollow">https://doi.org/10.1037/h0054346</a>
+            </p>
+            <p>
+              Max Planck Institute for Evolutionary Anthropology (2010). Home - Max Planck Institute for Evolutionary Anthropology. Accessed: November 23, 2022. <a href="https://www.eva.mpg.de/psycho/index/" rel="nofollow">https://www.eva.mpg.de/psycho/index/</a>
+            </p>
+            <p>
+              MedlinePlus (2012). Congenital insensitivity to pain: Medlineplus genetics. U.S. National Library of Medicine. Accessed: November 30, 2022. <a href="https://medlineplus.gov/genetics/condition/congenital-insensitivity-to-pain/" rel="nofollow">https://medlineplus.gov/genetics/condition/congenital-insensitivity-to-pain/</a>
+            </p>
+            <p>
+              Minsky, M. (1987). Communication with alien intelligence. In: Regis, E. Jr. (ed.) <i>Extraterrestrials. Science and alien intelligence</i>. Cambridge University Press.
+            </p>
+            <p>
+              Pennartz, C. M., Farisco, M. &amp; Evers, K. (2019). Indicators and criteria of consciousness in animals and intelligent machines: An inside-out approach. <i>Frontiers in Systems Neuroscience, 13.</i> <a href="https://doi.org/10.3389/fnsys.2019.00025" rel="nofollow">https://doi.org/10.3389/fnsys.2019.00025</a>
+            </p>
+            <p>
+              Pinker, S. (2015). <i>The language instinct</i>. Penguin.
+            </p>
+            <p>
+              Rickles, D., Hawe, P. &amp; Shiell, A. (2007). A simple guide to chaos and complexity, <i>Journal of Epidemiology &amp; Community Health, 61</i>(11), 933–937. <a href="https://doi.org/10.1136/jech.2006.054254" rel="nofollow">https://doi.org/10.1136/jech.2006.054254</a>
+            </p>
+            <p>
+              Rigg, K. (2022). Meta trained AI shut down for spewing "racism" &amp; misinformation. <i>Health Tech World</i>. Accessed: December 1, 2022. <a href="https://www.htworld.co.uk/news/ai-trained-by-meta-to-organise-science-was-shut-down-for-spewing-misinformation/" rel="nofollow">https://www.htworld.co.uk/news/ai-trained-by-meta-to-organise-science-was-shut-down-for-spewing-misinformation/</a>
+            </p>
+            <p>
+              Sagan, C. (1985). <i>Contact</i>. Simon and Schuster.
+            </p>
+            <p>
+              Satinover, J. (2002). <i>The quantum brain: The search for freedom and the next generation of man</i>. Wiley.
+            </p>
+            <p>
+              Schneider, W. &amp; Chein, J. M. (2003). Controlled &amp; automatic processing: Behavior, theory, and biological mechanisms. <i>Cognitive Science, 27</i>(3), 525–559. <a href="https://doi.org/10.1207/s15516709cog2703_8" rel="nofollow">https://doi.org/10.1207/s15516709cog2703_8</a>.
+            </p>
+            <p>
+              Seth, A. K. (2021). <i>Being you: A new science of consciousness</i>. Faber &amp; Faber.
+            </p>
+            <p>
+              Shepard, R. N. and Metzler, J. (1971). Mental rotation of three-dimensional objects. <i>Science, 171</i>(3972), 701–703. <a href="https://doi.org/10.1126/science.171.3972.701" rel="nofollow">https://doi.org/10.1126/science.171.3972.701</a>.
+            </p>
+            <p>
+              Stack Overflow (2012). Evenly distributing n points on a sphere. <i>Stack Overflow</i>. Accessed: November 23, 2022. <a href="https://stackoverflow.com/questions/9600801/evenly-distributing-n-points-on-a-sphere" rel="nofollow">https://stackoverflow.com/questions/9600801/evenly-distributing-n-points-on-a-sphere</a>
+            </p>
+            <p>
+              Strickland, E. (2021). How IBM Watson overpromised and underdelivered on AI health care. <i>IEEE Spectrum</i>. Accessed: November 23, 2022. <a href="https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care" rel="nofollow">https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care</a>
+            </p>
+            <p>
+              TechRepublic (2019). AI has a history of overpromising and under delivering. Accessed: November 23, 2022. <a href="https://www.techrepublic.com/videos/ai-has-a-history-of-overpromising-and-under-delivering/" rel="nofollow">https://www.techrepublic.com/videos/ai-has-a-history-of-overpromising-and-under-delivering/</a>
+            </p>
+            <p>
+              Tegmark, M. (2018). <i>Life 3.0:</i> <i>Being human in the age of artificial intelligence</i>. Penguin Books.
+            </p>
+            <p>
+              Tononi, G. (2004). An information integration theory of consciousness. <i>BMC Neuroscience, 5</i>, 42. <a href="https://doi.org/10.1186/1471-2202-5-42" rel="nofollow">https://doi.org/10.1186/1471-2202-5-42</a>
+            </p>
+            <p>
+              Tulving, E., Schacter, D. L. &amp; Stark, H. A. (1982). Priming effects in word-fragment completion are independent of recognition memory. <i>Journal of Experimental Psychology: Learning, Memory, and Cognition, 8(</i>4), 336–342. <a href="https://doi.org/10.1037/0278-7393.8.4.336" rel="nofollow">https://doi.org/10.1037/0278-7393.8.4.336</a>
+            </p>
+            <p>
+              Voss, P. (2017). Does an AGI need to be conscious? <i>Medium</i>. Accessed: November 22, 2022. <a href="https://medium.com/@petervoss/does-an-agi-need-to-be-conscious-17cf1e8d2400" rel="nofollow">https://medium.com/@petervoss/does-an-agi-need-to-be-conscious-17cf1e8d2400</a>
+            </p>
+            <p>
+              Wu, J. (2019). Empathy in artificial intelligence. <i>Forbes Magazine</i>. Accessed: November 30, 2022. <a href="https://www.forbes.com/sites/cognitiveworld/2019/12/17/empathy-in-artificial-intelligence/?sh=7f74441e6327" rel="nofollow">https://www.forbes.com/sites/cognitiveworld/2019/12/17/empathy-in-artificial-intelligence/?sh=7f74441e6327</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contants & Legal -->
+    <div class="container-fluid mt-4 mb-5">
+      <div class="container">
+        <div class="row text-left text-md-center">
+          <div class="col-md-6">
+            <h2 id="michalgow-contacts">Contacts</h2>
+            <div class="mt-3">
+              <span class="btn-link btn-link-email">
+                <span class="spamspan">
+                  <span class="u">michal.gow</span> [at] <span class="d">outlook [dot] com</span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-6 mt-md-0 mt-4">
+            <h2 id="michalgow-legal">Legal</h2>
+            <ul class="list-unstyled">
+              <li><a href="/privacy-policy">Privacy policy</a></li>
+              <li><a href="/terms-of-use">Terms of use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous">
+    </script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous">
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154655364-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154655364-2', {'anonymize_ip': true, 'client_storage': 'none'});
+    </script>
+  </body>
+</html>
