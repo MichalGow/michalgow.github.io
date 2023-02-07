@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Additional meta tags -->
+    <meta name="description" content="Cost-efficient Drupal hosting is an Alpha and Omega of a Drupal project. This article is an overview of cost-effective choices for each budget and website size, acquired and tested during the contracting years of Michal Gow, a Drupal enthusiast from Edinburgh.">
+    <meta name="author" content="Michal Z Gow">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michalgow.github.io/cost-efficient-drupal-hosting" />
+    <meta property="article:published_time" content="2023-02-07" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+    <title>Michal Z Gow | Cost-efficient Drupal hosting</title>
+
+    <!-- Spamspan script -->
+    <script src="js/spamspan.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light bg-transparent">
+      <div class="container">
+        <button class="navbar-toggler" data-target="#michalgow-nav" data-toggle="collapse" aria-label="Toggle menu block">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="michalgow-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/#aig">AIG Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#general-articles">General Articles</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#most-recent-projects">Most Recent Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#michalgow-contacts">Contacts</a></li>
+            <li class="nav-item"><a class="nav-link" href="#michalgow-legal">Legal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> <!-- Navigation end -->
+
+    <!-- Header -->
+    <div class="container-fluid mt-2" id="michalgow-header">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <a href="/">
+              <img class="w-25" src="images/michal-gow-bg.png" alt="Michal Z Gow caricature">
+            </a>
+            <h1>Michal Z Gow - Cost-efficient Drupal hosting</h1>
+
+            <strong>Last updated: 7 February 2023</strong>
+            <hr class="w-lg-50 w-75">
+            <p>Solutions architect, team lead, Drupal evangelist and AI enthusiast in Edinburgh, Scotland</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Header end -->
+
+    <!-- AGI Article -->
+    <div class="container-fluid mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="abstract pt-4 pb-4 pl-0 pl-md-4">
+              <strong>TL:DR</strong> The most cost-efficient hosting solution for a <a rel="nofollow" href="https://www.drupal.org">Drupal</a> website with
+              under ~15k/day authenticated users and under ~150k/day anonymous users is a VPS
+              (e.g. <a rel="nofollow" href="https://www.fasthosts.co.uk">FastHosts</a>). You can start with as little as £5/month, having a free
+              <a rel="nofollow" href="https://www.cloudflare.com">Cloudflare CDN</a> as a 443-port gatekeeper and <a rel="nofollow" href="https://github.com/acmesh-official/acme.sh">acme.sh</a> as your
+              free certificate automation. When your project grows, or you need more security features, use the $20/month Cloudflare service and 1£/month bastion as SSH port gatekeeper.
+              If you can live with the SLA of the VPS provider (probably yes), chances are you will never need more. However, should you need (almost) 100% uptime/fast recovery
+              and (almost) 100% security, your best bet is containers – <a rel="nofollow" href="https://aws.amazon.com">Amazon Web Services</a> (AWS) Elastic Beanstalk/CloudFormation and/or K8s
+              on <a rel="nofollow" href="https://cloud.google.com">Google Compute Engine</a> (GCE) give you all from load balancers, scalable infrastructure in different zones, autoscaling DB storage and bastions.
+              You can go for serverless AWS Fargate as well, which gives you a higher price tag and a bit more fun.
+            </p>
+
+            <h2 id="the_task">The task</h2>
+
+            <p>
+              Drupal requires a PHP interpreter, a web server, and a database to run. It can run on shared hosting as well as serverless solutions, the main considerations being three:
+              uptime, security and throughput (how many requests the hosting is able to serve efficiently).
+            </p>
+            <p>
+              From the practical point of view, the trade-offs for each of the factors can be calculated as a ratio between potential damage and the price
+              of control in a risk assessment table. In this article, I’ve grouped the results of such a calculation into two categories and suggested an appropriate/efficient
+              hosting solution. The reasoning behind the grouping is, that the ratio between damage and control has a very sharp curve, allowing to do a clear-cut when a more complex
+              solution is required.
+            </p>
+
+            <h2 id="the_three_factors">The three factors and solutions</h2>
+
+            <h3>Uptime</h3>
+
+            <p>
+              All the big hosting/cloud providers guarantee an average of 99.95% uptime of an instance. That accounts for approximately 30 minutes of downtime a month.
+              However, all you get in case of downtime is a discount on your monthly bill. That would surely not pay for the lost revenue of a busy e-shop.
+              And downtime lasting several hours isn’t that rare even at the biggest cloud providers.
+            </p>
+            <p>
+              Controlling for uptime is the most expensive endeavour because you must have a flexible and available infrastructure in different zones (datacentres) on demand.
+            </p>
+
+            <h3>Security</h3>
+
+            <p>
+              While all the nowadays hosting solutions offer encrypted storage and firewalls, the majority of the risk lay in human error/system misconfiguration,
+              zero-day exploits and brute-force attacks.
+            </p>
+            <p>
+              Controlling for security is the second on the pricelist of controls because the infrastructure doesn’t need to be as flexible and distributed, but additional resources are required.
+            </p>
+
+            <h3>Throughput</h3>
+
+            <p>
+              Controlling for uptime is indeed also controlling for throughput – if your website can stay online even under attack or in case of a disaster,
+              it has sufficient throughput indeed. However, on the other hand, you can increase throughput without increasing uptime security and save a lot of money.
+            </p>
+            <p>
+              Controlling for just a throughput is not very expensive, thus as a rule of thumb, leave this decision to the last step. It might take care of itself when controlling for the rest.
+
+            <h2>The solutions</h2>
+
+            <h3>99.95% uptime websites with up to 150k visitors/day</h3>
+
+            <p>
+              Starting with uptime, the majority of webs can accept some downtime. Especially when you can control the outgoing message (e.g. ‘Under maintenance’)
+              or you are not alone (the whole cloud is down). If you are not running extremely sensitive services (banking app, flight control),
+              you probably do not need to go beyond the SLAs of cloud providers.
+            </p>
+            <p>
+              Hence, the consideration is about security and throughput.
+            </p>
+
+            <h4>No VPS solution with a basic security</h4>
+
+            <p>
+              When you pair VPS with a free tier of Cloudflare CDN and your SSL certificate is managed via acme.sh, you can have formidable Drupal hosting even on a budget.
+              The key ingredient here is the CDN network, which allows you to run a website even if your Drupal backend is down (migrating),
+              giving you the ability to upgrade hosting without downtime. Additionally, CDN is your firewall for port 443
+              (you can lock your server’s IP to those of Cloudflare only to prevent any attack on the webserver level).
+            </p>
+
+            <h5>Example for £5/month at <a rel="nofollow" href="https://www.fasthosts.co.uk">FastHosts</a> (2 vCPU, 2GB RAM)</h5>
+
+            <p>
+              This is a typical small community server which has a limited number of editors and user profiles are mainly used for limiting access to content.
+            </p>
+
+            <ul>
+              <li>
+                Serve ~1k authenticated members/day (2 concurrent requests * 60 minutes * 8 hours; 256MB PHP Memory Limit).
+              </li>
+              <li>
+                Depending on Cloudflare settings it can sustain around ~25k visitors/day (50 concurrent requests * 60 minutes * 8 hours).
+              </li>
+              <li>
+                Recommended stack: Dockerised NGINX + PHP + MariaDB.
+              </li>
+            </ul>
+
+            <h5>Example for £18/month at <a rel="nofollow" href="https://www.fasthosts.co.uk">FastHosts</a> (8 vCPU, 24GB RAM)</h5>
+
+            <p>
+              This is a CMS of an organisation, e.g., a university resources platform. It can provide concurrent access for dozens of editors;
+              it would enable users to manage their own content and use Views without slowing the site down.
+            </p>
+
+            <ul>
+              <li>
+                Serve ~15k authenticated members/day (30 concurrent requests * 60 minutes * 8 hours; 512MB PHP Memory Limit).
+              </li>
+              <li>
+                Depending on Cloudflare settings it can sustain around ~150k visitors/day (300 concurrent requests * 60 minutes * 8 hours).
+              </li>
+              <li>
+                Recommended stack: Dockerised NGINX + PHP + MariaDB.
+              </li>
+            </ul>
+
+            <h4>Security-critical VPS solution</h4>
+
+            <p>
+              Websites with sensitive content, especially hosting private user data, are expected to go one step further in their security protection. There are two steps widely adopted, which add a layer of security:
+            </p>
+
+            <ul>
+              <li>
+                SSH Bastion. For an additional £1/month you can have a 1 vCPU/512GB tiny machine, which can serve as a Bastion server for your main web server.
+                When you have Bastion, just add a firewall rule to the main server preventing any access outside Bastion’s IP.
+                That does prevent any brute force attacks on your SSH access point on the web server.
+              </li>
+              <li>
+                Cloudflare paid service. While even the free Cloudflare service adds performance (by distributing static content),
+                its power stems from security rules available in the paid version. If used correctly, the Cloudflare CDN itself can prevent almost all the known Drupal security
+                attacks and keep your site available against the biggest DDoS attacks.
+              </li>
+            </ul>
+
+
+            <h3>Fast recovery/no uptime websites with huge, authenticated community</h3>
+
+            <p>
+              If your users are mainly anonymous, and you hit the bandwidth limit, instead of scaling the hosting you probably should look into static website generators
+              and headless Drupal. Drupal allows you to separate authenticated and anonymous users via domain (subdomain) names,
+              and you can host your static site for anonymous users directly on the Cloudflare platform for as little as $20/month with unlimited free traffic.
+            </p>
+            <p>
+              For the rest of us, a solution which scales is a must. The usual contemporary solution is cloud hosting. The first and second largest providers are
+              Amazon Web Services (AWS) and Google Compute Engine (GCE). However, the premium solutions come at a premium price and premium complexity.
+            </p>
+
+            <h4>Architecture</h4>
+
+            <p>
+              To ensure the architecture delivers both scalability/uptime and security, the solution requires at the minimum the following services:
+            </p>
+
+            <ul>
+              <li>
+                Load balancer,
+              </li>
+              <li>
+                Webserver and PHP service container (in 2 zones),
+              </li>
+              <li>
+                Scalable database solution,
+              </li>
+              <li>
+                Bastion server,
+              </li>
+              <li>
+                Container storage.
+              </li>
+            </ul>
+
+            <p>
+              The minimum architecture does not deliver the same speed and efficiency as the monolithic web server – added complexity means less efficiency – but it scales horizontally,
+              which means if you need the speed of 12 core processor, you have it in approx. 18 containers spanned over several zones.
+            </p>
+
+            <h4>Prices</h4>
+
+            <p>
+              The monthly prices below are estimates for the initial 2 zones setup, comparable to a 4 vCPU 16GB RAM monolithic server. The calculation itself varies a lot depending
+              on setup and data usage. Unlike the majority of VPS providers, cloud providers charge for the data traffic both internally (between zones) and externally (to the Internet).
+            </p>
+            <p>
+              Data traffic is calculated for 15k authenticated users/day (the threshold between VPS and cloud) when each user sees 10 pages, each 3 MB in size.
+            </p>
+
+            <ul>
+              <li>
+                Data transfers | $160 AWS, $180 GCE
+              </li>
+              <li>
+                Load balancer | $35 AWS, $85 GCE
+              </li>
+              <li>
+                Webserver and PHP service container 2x | $20 AWS, $15 GCE
+              </li>
+              <li>
+                Scalable database | $50 AWS, $ 60 GCE
+              </li>
+              <li>
+                Bastion server | $7 AWS, Free
+              </li>
+              <li>
+                Storage | $6 AWS, Free
+              </li>
+            </ul>
+
+            <p>
+              The starting price total is ~$278/month for AWS and ~$340 for GCE. As you can see, the money is in the data transfers.
+              While you can try and save some money by the usage of 3rd party storage and advanced caching, this adds additional complexity to the project,
+              when money saved in fees is spent on management and complexities in development.
+            </p>
+            <p>
+              The architecture of cloud solutions seems extremely flexible, but in practice, it goes down to the following:
+            </p>
+            <p>
+              In AWS are available two approaches, (1) Elastic containers managed via Beanstalk and/or CloudFormation;
+              and (2) Serverless computed engine managed via AWS Fargate. While the security is similar (the same OSs run in the containers),
+              the management is slightly easier in Fargate but the pricing is better when using Beanstalk (prices above are calculated for Elastic Beanstalk).
+            </p>
+            <p>
+              GCE offers K8s, which is a less vendor-lock approach, but it is slightly pricier.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contants & Legal -->
+    <div class="container-fluid mt-4 mb-5">
+      <div class="container">
+        <div class="row text-left text-md-center">
+          <div class="col-md-6">
+            <h2 id="michalgow-contacts">Contacts</h2>
+            <div class="mt-3">
+              <span class="btn-link btn-link-email">
+                <span class="spamspan">
+                  <span class="u">michal.gow</span> [at] <span class="d">outlook [dot] com</span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-6 mt-md-0 mt-4">
+            <h2 id="michalgow-legal">Legal</h2>
+            <ul class="list-unstyled">
+              <li><a href="/privacy-policy">Privacy policy</a></li>
+              <li><a href="/terms-of-use">Terms of use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous">
+    </script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous">
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154655364-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154655364-2', {'anonymize_ip': true, 'client_storage': 'none'});
+    </script>
+  </body>
+</html>

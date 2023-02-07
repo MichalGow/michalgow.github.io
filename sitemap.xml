@@ -6,8 +6,26 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://michalgow.github.io/</loc>
-    <lastmod>2020-07-21T08:33:15+00:00</lastmod>
+    <loc>https://michalgow.github.io</loc>
+    <lastmod>2023-02-07T08:33:15+00:00</lastmod>
     <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://michalgow.github.io/agi-is-here-why-should-we-care</loc>
+    <lastmod>2023-02-07T08:33:15+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://michalgow.github.io/cost-efficient-drupal-hosting</loc>
+    <lastmod>2023-02-07T08:33:15+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://michalgow.github.io/gdpr-compliant-google-analytics</loc>
+    <lastmod>2023-02-07T08:33:15+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
